@@ -59,7 +59,6 @@ module.exports = {
     proxy: {
       '/': {
         target: 'https://netease-cloud-music-c2c1ys55f-cc-0820.vercel.app',
-        ws: true,
         changeOrigin: true
       }
     },

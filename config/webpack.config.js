@@ -58,7 +58,8 @@ module.exports = {
     // 配置前端请求代理,
     proxy: {
       '/': {
-        target: 'https://649eb7fb445eac61dd938fd6--silly-hotteok-f92eac.netlify.app', // https://netease-cloud-music-c2c1ys55f-cc-0820.vercel.app
+        target: 'https://netease-cloud-music-c2c1ys55f-cc-0820.vercel.app',
+        ws: true,
         changeOrigin: true
       }
     },

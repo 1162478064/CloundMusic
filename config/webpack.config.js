@@ -63,8 +63,8 @@ module.exports = {
         secure: true,
         changeOrigin: true
       },
-      'https://64a118fe50d4bf21ce7df714--netease-cloud-music-c2c1ys55f-cc-0820.netlify.app': {
-        target: 'https://netease-cloud-music-c2c1ys55f-cc-0820.vercel.app',
+      '': {
+        target: 'https://64a118fe50d4bf21ce7df714--netease-cloud-music-c2c1ys55f-cc-0820.netlify.app',
         secure: true,
         changeOrigin: true
       }

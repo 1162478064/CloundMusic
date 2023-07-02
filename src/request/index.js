@@ -2,7 +2,7 @@ import axios from 'axios';
 axios.defaults.headers['Content-Type'] = 'application/json;charset=utf-8'
 
 const severce = axios.create({
-    baseURl: '',
+    baseURl: 'https://netease-cloud-music-c2c1ys55f-cc-0820.vercel.app',
     timeout: 5000
 })
 

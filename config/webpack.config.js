@@ -60,6 +60,7 @@ module.exports = {
       '/': {
         target: 'https://netease-cloud-music-c2c1ys55f-cc-0820.vercel.app',
         pathRewrite:{'^/':''},
+        secure: true,
         changeOrigin: true
       }
     },

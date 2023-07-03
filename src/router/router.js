@@ -2,13 +2,14 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter);
 
-import Layout from './Layout/Index.vue'
+import Layout from '../Layout/Index.vue'
+import Description from "../Layout/Description.vue";
 
 const routes = [
     {
         path: '/',
         component: Layout,
-        name: 'homeindex',
+        name: 'home',
         redirect: '/home',
         meta: { title: '首页' },
         children: [
@@ -22,11 +23,11 @@ const routes = [
     }, {
         path: '/podcast',
         component: Layout,
-        name: 'podcastindex',
+        name: 'podcast',
         meta: { title: '播客' },
         children: [
             {
-                path: '/podcast',
+                path: 'index',
                 component: () => import('@/views/Podcast.vue'),
                 name: 'podcast',
                 meta: { title: '播客' }
@@ -35,11 +36,11 @@ const routes = [
     }, {
         path: '/my',
         component: Layout,
-        name: 'myindex',
+        name: 'my',
         meta: { title: '我的' },
         children: [
             {
-                path: '/my',
+                path: 'index',
                 component: () => import('@/views/My.vue'),
                 name: 'my',
                 meta: { title: '我的' }
@@ -48,11 +49,11 @@ const routes = [
     }, {
         path: '/follow',
         component: Layout,
-        name: 'followindex',
+        name: 'follow',
         meta: { title: '关注 ' },
         children: [
             {
-                path: '/follow',
+                path: 'index',
                 component: () => import('@/views/Follow.vue'),
                 name: 'follow',
                 meta: { title: '关注' }
@@ -61,14 +62,25 @@ const routes = [
     }, {
         path: '/community',
         component: Layout,
-        name: 'communityindex',
+        name: 'community',
         meta: { title: '社区' },
         children: [
             {
-                path: '/community',
+                path: 'index',
                 component: () => import('@/views/Community.vue'),
                 name: 'community',
                 meta: { title: '社区' }
+            }
+        ]
+    }, {
+        path: '/description',
+        name: 'Description',
+        component: Description,
+        children: [
+            {
+                path: 'search',
+                name: 'Search',
+                component: () => import('../views/SearchPage.vue')
             }
         ]
     }

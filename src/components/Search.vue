@@ -1,7 +1,11 @@
 <template>
-  <div class="sticky top-0 z-10 flex justify-between items-center w-100vw px-4 bg-[#F7F8FA]">
-    <van-icon name="apps-o" size="18px" @click="OpenSidaber" />
-    <van-search class="flex-1" shape="round" v-model="Search" background="transparent" placeholder="请输入搜索关键词" right-icon="scan" />
+  <div class="sticky top-0 z-10 flex justify-between items-center w-100vw px-4 py-[10px] bg-[#F8F9FD] text-[#959698] dark:bg-[#1B1B23]">
+    <van-icon name="apps-o" size="18px" @click="OpenSidaber" class="text-[#959698]" />
+    <div class="flex-1 flex justify-between items-center py-[12px] px-[5px] mx-[9px] rounded-[50px] bg-[white] dark:bg-[#2D2D35]">
+      <van-icon name="search" class="mx-[5px]" />
+      <input type="text" class="flex-1 bg-transparent text-sm" @click="$router.push('/description/search')">
+      <van-icon name="scan" class="mx-[5px]" />
+    </div>
     <van-icon name="music-o" size="18px" />
   </div>
 </template>
@@ -17,14 +21,10 @@ export default {
   methods: {
     OpenSidaber() {
       this.$store.commit('OpenOrClose', true);
-      console.log(this.$store.state.Sidaber);
     }
   }
 }
 </script>
 
 <style scoped>
-  /deep/ .van-search__content {
-    background: linear-gradient(to right, #E7E6F4, #F7E3EE);
-  }
 </style>

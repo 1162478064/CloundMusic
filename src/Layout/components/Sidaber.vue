@@ -1,9 +1,9 @@
 <template>
-  <div class="py-5">
-    <div class="User_Image mx-5 flex justify-between items-center mb-5">
+  <div class="py-5 bg-[#F7F8FA] dark:bg-[#1B1B23]">
+    <div class="User_Image mx-5 flex justify-between items-center mb-5 datk:text-[#E8E8E8]">
       <div class="flex items-center">
-        <van-image width="25" height="25" fit="cover" round src="" error-icon="manager" />
-        <span class="text-sm ml-3">未登录</span>
+        <van-image width="35" height="35" fit="cover" round src="" error-icon="manager" />
+        <span class="text-xs ml-3">未登录</span>
         <van-icon name="arrow" />
       </div>
       <van-icon name="scan" />
@@ -32,20 +32,22 @@
         <van-icon name="music-o" class="!text-sm" />
       </div>
     </div>
-    <div v-for="(item, index) in SidaberSetting" :key="index" class="bg-[white] m-5 rounded-xl overflow-hidden">
-      <h3 v-if="item.title" class="text-[#999999] text-xs border-b border-[#F3F3F3] border-solid p-[15px]">{{ item.title }}</h3>
+    <div v-for="(item, index) in SidaberSetting" :key="index" class="m-5 rounded-xl overflow-hidden !bg-[white] dark:!bg-[#2C2C2C]">
+      <h3 v-if="item.title" class="text-[#999999] text-xs border-b border-solid p-[15px] border-[#F3F3F3] dark:border-[#373737]">{{ item.title }}</h3>
       <ul>
         <li v-for="(value, key) in item.Arr" :key="key">
-          <van-cell v-if="!value.silder" :title="value.name" :icon="value.icon" :value="value.description" is-link />
-          <van-cell v-if="value.silder" :title="value.name" :icon="value.icon">
+          <van-cell v-if="!value.silder" :title="value.name" :icon="value.icon" :value="value.description" is-link
+              class="!bg-[white] !text-[black] dark:!bg-[#2C2C2C] dark:!text-[#EAEAEA]"
+          />
+          <van-cell v-if="value.silder" :title="value.name" :icon="value.icon" class="!bg-[white] !text-[black] dark:!bg-[#2C2C2C] dark:!text-[#EAEAEA]">
             <template #right-icon>
-              <van-switch v-model="DeepColor" size="15px" />
+              <van-switch v-model="Dark" size="15px" active-color="#FE3651" />
             </template>
           </van-cell>
         </li>
       </ul>
     </div>
-    <div class="bg-[white] m-5 rounded-xl p-[10px] flex justify-center items-center text-sm text-[red]">退出登录/关闭</div>
+    <div class="m-5 rounded-xl p-[10px] flex justify-center items-center text-sm text-[red] bg-[white] dark:bg-[#2C2C2C]">退出登录/关闭</div>
   </div>
 </template>
 
@@ -55,8 +57,20 @@ export default {
   name: "Sidaber",
   data() {
     return {
-      SidaberSetting: data.SidaberSetting,
-      DeepColor: false
+      SidaberSetting: data.SidaberSetting
+    }
+  },
+  computed: {
+    Sidaber() {
+        return this.$store.state.Sidaber
+    },
+    Dark: {
+      get() {
+        return this.$store.state.Dark
+      },
+      set(val) {
+        this.$store.commit('DarkShow', val);
+      }
     }
   }
 }

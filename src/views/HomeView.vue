@@ -1,5 +1,5 @@
 <template>
-	<div class="w-full bg-[#F7F8FA]">
+	<div class="w-full">
     <search />
     <van-pull-refresh v-model="loading" @refresh="onRefresh" class="z-0">
       <banner :banner="data.banners" />

@@ -1,0 +1,33 @@
+:root[theme='light'] {
+    --van-search-background-color: transparent;
+    --van-search-content-background-color: #F7F8FA;
+    --van-search-action-text-color: #C8C9CC;
+    --van-search-left-icon-color: #AC97AF;
+
+    --van-background-color: #F7F8FA;
+
+    --van-gradient-PurpleRed: linear-gradient(to right, #E7E6F4, #F7E3EE);
+    --van-Icon-color: black;
+    --van-text-color: black;
+    --van-text-derection-color: #969799;
+    --van-border-bottom-color: rgba(226, 232, 240, 1);
+
+    --van-card-bg: white;
+}
+
+:root[theme='dark'] {
+    --van-search-background-color: transparent;
+    --van-search-content-background-color: #2D2D35;
+    --van-search-action-text-color: #9898A0;
+    --van-search-left-icon-color: #585860;
+
+    --van-background-color: #1B1B23;
+
+    --van-gradient-PurpleRed: #2D2D35;
+    --van-Icon-color: white;
+    --van-text-color: white;
+    --van-text-derection-color: #A0A1A6;
+    --van-border-bottom-color: #2D2D35;
+
+    --van-card-bg: white;
+}

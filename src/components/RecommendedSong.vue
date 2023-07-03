@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full border-b border-b-slate-200 pb-3">
+  <div class="w-full border-b border-b-slate-200 pb-3 dark:border-b-[#24242C]">
     <h4 class="my-5 text-sm font-normal flex items-center justify-between px-4">
-      <div class="flex items-center">
+      <div class="flex items-center dark:text-[#E7E7E7]">
         <span>推荐歌单</span>
         <Icon icon="mingcute:right-line" />
       </div>
@@ -21,18 +21,18 @@
             </transition>
             <Icon icon="ion:infinite" width="20" color="white" class="absolute top-1 right-1" />
           </div>
-          <p v-if="recommended[Current]" class="text-xs my-1">{{ recommended[Current].name }}</p>
+          <p v-if="recommended[Current]" class="van-multi-ellipsis--l2 text-xs my-1">{{ recommended[Current].name }}</p>
         </ul>
         <li v-for="(item, index) in recommended" :key="index" class="min-w-[33%] max-w-[33%] mr-2">
           <div class="relative">
             <img :src="item.picUrl" alt="" class="rounded-lg">
             <Icon icon="ph:play-fill" color="white" class="absolute bottom-2 right-2 text-xl" />
-            <div class="absolute top-1 right-1 flex items-center text-white font-bold text-xs">
-              <Icon icon="ph:play-fill" color="white" />
+            <div class="absolute top-1 right-1 flex items-center text-[#F5E7E8] font-bold text-xs">
+              <Icon icon="ph:play-fill" color="#F5E7E8" />
               <span>{{ (item.playCount/10000).toFixed(0) }}万</span>
             </div>
           </div>
-          <p class="text-xs my-1">{{ item.name }}</p>
+          <p class="text-xs my-1 van-multi-ellipsis--l2">{{ item.name }}</p>
         </li>
       </ul>
     </div>

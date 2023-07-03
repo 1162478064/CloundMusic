@@ -1,0 +1,16 @@
+:root {
+    --van-search-background-color: transparent;
+    --van-search-content-background-color: #2D2D35;
+    --van-search-action-text-color: #9898A0;
+    --van-search-left-icon-color: #585860;
+
+    --van-background-color: #1B1B23;
+
+    --van-gradient-PurpleRed: #2D2D35;
+    --van-Icon-color: white;
+    --van-text-color: white;
+    --van-text-derection-color: #A0A1A6;
+    --van-border-bottom-color: #2D2D35;
+
+    --van-card-bg: #26262E;
+}

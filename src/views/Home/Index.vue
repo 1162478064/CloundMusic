@@ -46,13 +46,13 @@ import { GetMusicList, GetRecommendedSong } from "@/API/List";
 export default {
   name: "Home",
   components: {
-    search: () => import('../components/Search.vue'),
-    banner: () => import('../components/Banner.vue'),
-    menulist: () => import('../components/Menu.vue'),
-    recomendsong: () => import('../components/RecommendedSong.vue'),
-    newsong: () => import('../components/NewSong.vue'),
-    ranking: () => import('../components/Ranking.vue'),
-    calendar: () => import('../components/Calendar.vue')
+    search: () => import('../../components/Search.vue'),
+    banner: () => import('../../components/Banner.vue'),
+    menulist: () => import('../../components/Menu.vue'),
+    recomendsong: () => import('../../components/RecommendedSong.vue'),
+    newsong: () => import('../../components/NewSong.vue'),
+    ranking: () => import('../../components/Ranking.vue'),
+    calendar: () => import('../../components/Calendar.vue')
   },
   data() {
     return {

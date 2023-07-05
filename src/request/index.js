@@ -1,4 +1,5 @@
 import axios from 'axios';
+import store from "@/store";
 axios.defaults.headers['Content-Type'] = 'application/json;charset=utf-8'
 
 const severce = axios.create({
@@ -7,7 +8,7 @@ const severce = axios.create({
 })
 
 severce.interceptors.request.use(config => {
-    config.headers['Authorization'] = 'netease-cloud-music-c2c1ys55f-cc-0820.vercel.app'
+        config.headers['Authorization'] = 'netease-cloud-music-c2c1ys55f-cc-0820.vercel.app'
         return config
     }, error => {
         console.log(error) // for debug

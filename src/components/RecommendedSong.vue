@@ -23,7 +23,7 @@
           </div>
           <p v-if="recommended[Current]" class="van-multi-ellipsis--l2 text-xs my-1">{{ recommended[Current].name }}</p>
         </ul>
-        <li v-for="(item, index) in recommended" :key="index" class="min-w-[33%] max-w-[33%] mr-2">
+        <li v-for="(item, index) in recommended" :key="index" class="min-w-[33%] max-w-[33%] mr-2" @click="JumpPage(index)">
           <div class="relative">
             <img :src="item.picUrl" alt="" class="rounded-lg">
             <Icon icon="ph:play-fill" color="white" class="absolute bottom-2 right-2 text-xl" />
@@ -59,6 +59,10 @@ export default {
   methods: {
     alertShare() {
       this.$emit('transfer',{ whether: true, title: '推荐歌单' })
+    },
+    JumpPage(Index) {
+      // console.log(this.recommended[Index].id);
+      this.$router.push({ path: '/description/detail', query: { id: this.recommended[Index].id } })
     }
   }
 }

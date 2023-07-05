@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="dark:bg-[#1B1B23] dark:text-[#BBBBBC]">
     <div class="sticky top-0 z-10 flex justify-between items-center w-100vw px-4 bg-[#F8F9FD] text-[#959698] dark:bg-[#1B1B23]">
-      <van-icon name="arrow-left" size="18px" class="text-[#959698]" @click="this.$router.back()" />
+      <van-icon name="arrow-left" size="18px" class="text-[#959698]" @click="$router.back()" />
       <van-search
           v-model="SearchValue"
           shape="round"
@@ -22,16 +22,16 @@
     <div v-show="SearchValue.length === 0" class="m-4">
       <h4 class="text-sm mb-5">搜索历史</h4>
       <div>
-        <span v-for="(item, index) in history" :key="index" class="text-xs text-[#555B6A] py-[7px] px-[12px] bg-[white] rounded-full cursor-pointer">{{ item }}</span>
+        <span v-for="(item, index) in history" :key="index" class="text-xs text-[#555B6A] py-[7px] px-[12px] bg-[white] rounded-full cursor-pointer dark:bg-[#32323A] dark:text-[#D6D6D8]">{{ item }}</span>
       </div>
     </div>
     <div v-show="SearchValue.length === 0" class="m-4">
       <h4 class="text-sm mb-5">猜你喜欢</h4>
       <div>
-        <span v-for="(item, index) in like" :key="index" class="text-xs text-[#555B6A] py-[7px] px-[12px] bg-[white] rounded-full cursor-pointer">{{ item }}</span>
+        <span v-for="(item, index) in like" :key="index" class="text-xs text-[#555B6A] py-[7px] px-[12px] bg-[white] rounded-full cursor-pointer dark:bg-[#32323A] dark:text-[#D6D6D8]">{{ item }}</span>
       </div>
     </div>
-    <van-swipe v-show="SearchValue.length === 0" :loop="false" :show-indicators="false" :width="ResizeWidth" class="mb-5">
+    <van-swipe  :loop="false" :show-indicators="false" :width="ResizeWidth" class="mb-5">
       <van-swipe-item v-for="(item, index) in RankArr" :key="index" class="pl-5" :class="index === RankArr.length - 1 ? 'pr-5' : ''">
         <div class="p-5 bg-[white] rounded-lg">
           <h4 class="pb-5 border-b border-[#E5E5E5]">
@@ -50,7 +50,11 @@
         </div>
       </van-swipe-item>
     </van-swipe>
-    <ul>
+    <ul v-show="SearchValue.length > 0">
+      <li class="flex items-center pl-5">
+        <van-icon name="search" size="18px" />
+        <p class="border-b border-[#ccc] flex-1 truncate py-[15px] text-xs">123</p>
+      </li>
       <li v-for="(item, index) in SearchData" :key="index" class="flex items-center pl-5">
         <van-icon name="search" size="18px" />
         <p class="border-b border-[#ccc] flex-1 truncate py-[15px] text-xs">{{ item.name }}</p>

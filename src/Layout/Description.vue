@@ -1,7 +1,7 @@
 <template>
   <div id="Description" class="h-[100vh] flex justify-between flex-col">
     <router-view :key="key" class="h-[calc(100vh-50px)] bg-[#F8F9FD] overflow-auto" />
-    <div class="bg-[#FCFDFF] h-[50px]">播放器</div>
+    <div class="bg-[#FCFDFF] dark:bg-[#1B1B23] dark:text-[#BBBBBC] h-[50px]">播放器</div>
   </div>
 </template>
 

@@ -9,13 +9,11 @@ const routes = [
     {
         path: '/',
         component: Layout,
-        name: 'home',
         redirect: '/home',
-        meta: { title: '首页' },
         children: [
             {
                 path: 'home',
-                component: () => import('@/views/HomeView.vue'),
+                component: () => import('@/views/Home/Index.vue'),
                 name: 'home',
                 meta: { title: '首页' }
             }
@@ -24,11 +22,12 @@ const routes = [
         path: '/podcast',
         component: Layout,
         name: 'podcast',
+        redirect: '/podcast/index',
         meta: { title: '播客' },
         children: [
             {
                 path: 'index',
-                component: () => import('@/views/Podcast.vue'),
+                component: () => import('@/views/Podcast/Index.vue'),
                 name: 'podcast',
                 meta: { title: '播客' }
             }
@@ -37,11 +36,12 @@ const routes = [
         path: '/my',
         component: Layout,
         name: 'my',
+        redirect: '/index',
         meta: { title: '我的' },
         children: [
             {
-                path: 'index',
-                component: () => import('@/views/My.vue'),
+                path: '/my/index',
+                component: () => import('@/views/My/Index.vue'),
                 name: 'my',
                 meta: { title: '我的' }
             }
@@ -50,11 +50,12 @@ const routes = [
         path: '/follow',
         component: Layout,
         name: 'follow',
+        redirect: '/follow/index',
         meta: { title: '关注 ' },
         children: [
             {
                 path: 'index',
-                component: () => import('@/views/Follow.vue'),
+                component: () => import('@/views/Follow/Index.vue'),
                 name: 'follow',
                 meta: { title: '关注' }
             }
@@ -63,11 +64,12 @@ const routes = [
         path: '/community',
         component: Layout,
         name: 'community',
+        redirect: '/community/index',
         meta: { title: '社区' },
         children: [
             {
                 path: 'index',
-                component: () => import('@/views/Community.vue'),
+                component: () => import('@/views/Community/Index.vue'),
                 name: 'community',
                 meta: { title: '社区' }
             }
@@ -75,14 +77,24 @@ const routes = [
     }, {
         path: '/description',
         name: 'Description',
+        redirect: '/description/search',
         component: Description,
         children: [
             {
                 path: 'search',
                 name: 'Search',
-                component: () => import('../views/SearchPage.vue')
+                component: () => import('../views/Other/SearchPage.vue')
+            }, {
+                path: 'detail',
+                component: () => import('@/views/Home/SingDetail.vue'),
+                name: 'detail',
+                meta: { title: '歌单详情页' }
             }
         ]
+    }, {
+        path: '/Login',
+        name: 'login',
+        component: () => import('../views/Other/Login.vue')
     }
 ]
 

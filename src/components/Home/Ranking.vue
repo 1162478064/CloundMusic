@@ -16,19 +16,17 @@
        <div class="mx-5 p-4 rounded-md" :class="$store.state.Dark ? 'bg-[#26262E]' : 'bg-[white]'">
          <h6 class="flex justify-between items-center">
            <div class="flex items-center text-sm">
-             <span>{{ item.uiElement.mainTitle.title }}</span>
+             <span>{{ item.name }}</span>
              <Icon icon="mingcute:right-line" />
            </div>
-           <div class="text-xs text-gray-300">{{ item.uiElement.mainTitle.titleDesc }}</div>
+           <div class="text-xs text-gray-300">{{ item.updateFrequency }}</div>
          </h6>
          <ul>
-           <li v-for="(value, key) in item.resources" :key="key" class="flex justify-between items-center mt-3">
-             <img :src="value.uiElement.image.imageUrl" alt="" class=" min-h-[65px] max-h-[70px] rounded">
-             <span v-if="key == 0" class="flex-none px-3 font-bold text-[yellow]">{{ key + 1 }}</span>
-             <span v-else-if="key == 1" class="flex-none px-3 font-bold text-[#ccc]">{{ key + 1 }}</span>
-             <span v-else class="flex-none px-3 font-bold text-[orange]">{{ key + 1 }}</span>
-             <p class="flex-1 text-sm/[13px]">{{ value.uiElement.mainTitle.title }}</p>
-             <b class="text-xs font-thin">{{ value.uiElement.labelText.text }}</b>
+           <li v-for="(value, key) in item.tracks" :key="key" class="flex justify-between items-center mt-3">
+             <img :src="value.al.picUrl" alt="" class=" min-h-[65px] max-h-[70px] rounded">
+             <span class="flex-none px-3 font-bold" v-bind:class="{ 'text-[yellow]' : key === 0, 'text-[#ccc]' : key === 1, 'text-[orange]' : key === 2 }">{{ key + 1 }}</span>
+             <p class="flex-1 text-sm/[13px]">{{ value.al.name }}</p>
+             <b class="text-xs font-thin">{{ value.ar[0].name }}</b>
            </li>
          </ul>
        </div>

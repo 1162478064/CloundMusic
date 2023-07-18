@@ -14,7 +14,7 @@ const routes = [
             {
                 path: 'home',
                 component: () => import('@/views/Home/Index.vue'),
-                name: 'home',
+                name: 'homePage',
                 meta: { title: '首页' }
             }
         ]
@@ -28,7 +28,7 @@ const routes = [
             {
                 path: 'index',
                 component: () => import('@/views/Podcast/Index.vue'),
-                name: 'podcast',
+                name: 'podcastPage',
                 meta: { title: '播客' }
             }
         ]
@@ -36,13 +36,13 @@ const routes = [
         path: '/my',
         component: Layout,
         name: 'my',
-        redirect: '/index',
+        redirect: '/my/index',
         meta: { title: '我的' },
         children: [
             {
-                path: '/my/index',
+                path: 'index',
                 component: () => import('@/views/My/Index.vue'),
-                name: 'my',
+                name: 'myPage',
                 meta: { title: '我的' }
             }
         ]
@@ -56,7 +56,7 @@ const routes = [
             {
                 path: 'index',
                 component: () => import('@/views/Follow/Index.vue'),
-                name: 'follow',
+                name: 'followPage',
                 meta: { title: '关注' }
             }
         ]
@@ -70,29 +70,50 @@ const routes = [
             {
                 path: 'index',
                 component: () => import('@/views/Community/Index.vue'),
-                name: 'community',
+                name: 'communityPage',
                 meta: { title: '社区' }
             }
         ]
     }, {
-        path: '/description',
+        path: '/Description',
         name: 'Description',
-        redirect: '/description/search',
+        redirect: '/Description/Search',
         component: Description,
         children: [
             {
-                path: 'search',
+                path: 'Search',
                 name: 'Search',
-                component: () => import('../views/Other/SearchPage.vue')
+                component: () => import('../views/Other/SearchPage.vue'),
+                meta: {}
+            },{
+                path: 'SearchResult/:SearchValue',
+                name: 'SearchResult',
+                component: () => import('../views/Other/SearchResult.vue'),
+                meta: {}
             }, {
                 path: 'detail',
                 component: () => import('@/views/Home/SingDetail.vue'),
                 name: 'detail',
-                meta: { title: '歌单详情页' }
+                meta: { title: '歌单' }
+            }, {
+                path: 'count',
+                component: () => import('@/views/My/MyCount.vue'),
+                name: 'mycount',
+                meta: { title: sessionStorage.getItem('nickname') || '' }
+            }, {
+                path: 'AccountSetting',
+                component: () => import('@/views/My/AccountSetting.vue'),
+                name: 'AccountSetting',
+                meta: { title: '我的资料' }
+            }, {
+                path: 'QR',
+                component: () => import('@/views/My/QR.vue'),
+                name: 'QR',
+                meta: { title: '我的二维码' }
             }
         ]
     }, {
-        path: '/Login',
+        path: '/login',
         name: 'login',
         component: () => import('../views/Other/Login.vue')
     }

@@ -1,9 +1,9 @@
 <template>
   <div class="py-5 bg-[#F7F8FA] dark:bg-[#1B1B23]">
     <div class="User_Image mx-5 flex justify-between items-center mb-5 datk:text-[#E8E8E8]">
-      <div class="flex items-center">
-        <van-image width="35" height="35" fit="cover" round src="" error-icon="manager" />
-        <span class="text-xs ml-3">未登录</span>
+      <div class="flex items-center" @click="$router.push('/description/count')">
+        <van-image width="35" height="35" fit="cover" round :src="Nickname" error-icon="manager" />
+        <span class="text-xs ml-3">{{ Nickname || '未登录' }}</span>
         <van-icon name="arrow" />
       </div>
       <van-icon name="scan" />
@@ -36,14 +36,26 @@
       <h3 v-if="item.title" class="text-[#999999] text-xs border-b border-solid p-[15px] border-[#F3F3F3] dark:border-[#373737]">{{ item.title }}</h3>
       <ul>
         <li v-for="(value, key) in item.Arr" :key="key">
-          <van-cell v-if="!value.silder" :title="value.name" :icon="value.icon" :value="value.description" is-link
-              class="!bg-[white] !text-[black] dark:!bg-[#2C2C2C] dark:!text-[#EAEAEA]"
-          />
-          <van-cell v-if="value.silder" :title="value.name" :icon="value.icon" class="!bg-[white] !text-[black] dark:!bg-[#2C2C2C] dark:!text-[#EAEAEA]">
+          <van-cell
+              v-if="value.silder"
+              :clickable="true"
+              :title="value.name"
+              :icon="value.icon"
+              class="dark:bg-[#2C2C2C] dark:text-[#EAEAEA] items-center"
+          >
             <template #right-icon>
               <van-switch v-model="Dark" size="15px" active-color="#FE3651" />
             </template>
           </van-cell>
+          <van-cell
+              v-else
+              :title="value.name"
+              :icon="value.icon"
+              :value="value.description"
+              is-link
+              :clickable="true"
+              class="dark:bg-[#2C2C2C] dark:text-[#EAEAEA] items-center"
+          />
         </li>
       </ul>
     </div>
@@ -52,12 +64,14 @@
 </template>
 
 <script>
-import data from '../../assetes/HomeMenu.js'
+import data from '../../assets/HomeMenu.js'
 export default {
   name: "Sidaber",
   data() {
     return {
-      SidaberSetting: data.SidaberSetting
+      SidaberSetting: data.SidaberSetting,
+      UserAvatar: sessionStorage.getItem('avatarUrl'),
+      Nickname: sessionStorage.getItem('nickname')
     }
   },
   computed: {

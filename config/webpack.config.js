@@ -35,10 +35,10 @@ module.exports = {
         ],
       },
       {
-        test: /\.(woff | eot | ttf | otf | svg)$/,
+        test: /\.(woff|eot|ttf|otf|svg|png|jpg|gif)$/,
         type: 'asset/resource',
-      },
-    ],
+      }
+    ]
   },
   mode: process.env.NODE_ENV,
   resolve: {

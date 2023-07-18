@@ -7,6 +7,11 @@
   "resolved" "https://registry.npmjs.org/@alloc/quick-lru/-/quick-lru-5.2.0.tgz"
   "version" "5.2.0"
 
+"@amap/amap-jsapi-loader@^1.0.1":
+  "integrity" "sha512-nPyLKt7Ow/ThHLkSvn2etQlUzqxmTVgK7bIgwdBRTg2HK5668oN7xVxkaiRe3YZEzGzfV2XgH5Jmu2T73ljejw=="
+  "resolved" "https://registry.npmjs.org/@amap/amap-jsapi-loader/-/amap-jsapi-loader-1.0.1.tgz"
+  "version" "1.0.1"
+
 "@babel/code-frame@^7.0.0":
   "integrity" "sha512-Xmwn266vad+6DAqEB2A6V/CcZVp62BbwVmcOJc2RPuwih1kw02TjQvWVWlcKGbBPd+8/0V5DEkOcizRGYsspYQ=="
   "resolved" "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.22.5.tgz"
@@ -578,6 +583,11 @@
   "version" "8.5.5"
   dependencies:
     "@types/node" "*"
+
+"@vant/area-data@^1.4.1":
+  "integrity" "sha512-D8zI/rfxREhnIKGoYzsEJZ73fte4JARhFeFftLIH7ynu1sPrCBEgPkLEbwPyvw3VC4JdSIuzaK5uOhu+BcoPXw=="
+  "resolved" "https://registry.npmjs.org/@vant/area-data/-/area-data-1.4.1.tgz"
+  "version" "1.4.1"
 
 "@vant/icons@^1.7.1":
   "integrity" "sha512-sKfEUo2/CkQFuERxvkuF6mGQZDKu3IQdj5rV9Fm0weJXtchDSSQ+zt8qPCNUEhh9Y8shy5PzxbvAfOOkCwlCXg=="
@@ -2459,6 +2469,14 @@
   dependencies:
     "flat-cache" "^3.0.4"
 
+"file-loader@*", "file-loader@^6.2.0":
+  "integrity" "sha512-qo3glqyTa61Ytg4u73GultjHGjdRyig3tG6lPtyX/jOEJvHif9uB0/OCI2Kif6ctF3caQTW2G5gym21oAsI4pw=="
+  "resolved" "https://registry.npmjs.org/file-loader/-/file-loader-6.2.0.tgz"
+  "version" "6.2.0"
+  dependencies:
+    "loader-utils" "^2.0.0"
+    "schema-utils" "^3.0.0"
+
 "fill-range@^7.0.1":
   "integrity" "sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ=="
   "resolved" "https://registry.npmjs.org/fill-range/-/fill-range-7.0.1.tgz"
@@ -3498,6 +3516,11 @@
   dependencies:
     "minimist" "^1.2.0"
 
+"json5@^2.1.2":
+  "integrity" "sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg=="
+  "resolved" "https://registry.npmjs.org/json5/-/json5-2.2.3.tgz"
+  "version" "2.2.3"
+
 "jsonfile@^4.0.0":
   "integrity" "sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg=="
   "resolved" "https://registry.npmjs.org/jsonfile/-/jsonfile-4.0.0.tgz"
@@ -3593,6 +3616,15 @@
     "big.js" "^5.2.2"
     "emojis-list" "^3.0.0"
     "json5" "^1.0.1"
+
+"loader-utils@^2.0.0":
+  "integrity" "sha512-xXqpXoINfFhgua9xiqD8fPFHgkoq1mmmpE92WlDbm9rNRd/EbRb+Gqf908T2DMfuHjjJlksiK2RbHVOdD/MqSw=="
+  "resolved" "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.4.tgz"
+  "version" "2.0.4"
+  dependencies:
+    "big.js" "^5.2.2"
+    "emojis-list" "^3.0.0"
+    "json5" "^2.1.2"
 
 "locate-path@^5.0.0":
   "integrity" "sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g=="
@@ -3893,6 +3925,11 @@
   "version" "0.5.6"
   dependencies:
     "minimist" "^1.2.6"
+
+"moment@^2.29.4":
+  "integrity" "sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w=="
+  "resolved" "https://registry.npmjs.org/moment/-/moment-2.29.4.tgz"
+  "version" "2.29.4"
 
 "ms@^2.1.1", "ms@2.1.2":
   "integrity" "sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w=="
@@ -4891,6 +4928,15 @@
   "resolved" "https://registry.npmjs.org/sax/-/sax-1.2.4.tgz"
   "version" "1.2.4"
 
+"schema-utils@^3.0.0":
+  "integrity" "sha512-pN/yOAvcC+5rQ5nERGuwrjLlYvLTbCibnZ1I7B1LaiAz9BRBlE9GMgE/eqV30P7aJQUf7Ddimy/RsbYO/GrVGg=="
+  "resolved" "https://registry.npmjs.org/schema-utils/-/schema-utils-3.3.0.tgz"
+  "version" "3.3.0"
+  dependencies:
+    "@types/json-schema" "^7.0.8"
+    "ajv" "^6.12.5"
+    "ajv-keywords" "^3.5.2"
+
 "schema-utils@^3.1.1":
   "integrity" "sha512-pN/yOAvcC+5rQ5nERGuwrjLlYvLTbCibnZ1I7B1LaiAz9BRBlE9GMgE/eqV30P7aJQUf7Ddimy/RsbYO/GrVGg=="
   "resolved" "https://registry.npmjs.org/schema-utils/-/schema-utils-3.3.0.tgz"
@@ -5665,6 +5711,15 @@
   "version" "4.4.1"
   dependencies:
     "punycode" "^2.1.0"
+
+"url-loader@^4.1.1":
+  "integrity" "sha512-3BTV812+AVHHOJQO8O5MkWgZ5aosP7GnROJwvzLS9hWDj00lZ6Z0wNak423Lp9PBZN05N+Jk/N5Si8jRAlGyWA=="
+  "resolved" "https://registry.npmjs.org/url-loader/-/url-loader-4.1.1.tgz"
+  "version" "4.1.1"
+  dependencies:
+    "loader-utils" "^2.0.0"
+    "mime-types" "^2.1.27"
+    "schema-utils" "^3.0.0"
 
 "user-home@^2.0.0":
   "integrity" "sha512-KMWqdlOcjCYdtIJpicDSFBQ8nFwS2i9sslAd6f4+CBGcU4gist2REnr2fxj2YocvJFxSF3ZOHLYLVZnUxv4BZQ=="

@@ -11,13 +11,13 @@
     </h4>
     <van-swipe :show-indicators="false" class="px-4 w-[100%]">
       <van-swipe-item v-for="(item, index) in quicksong" :key="index">
-        <div v-for="(value, key) in item.resources" :key="key" class="flex justify-between items-center my-2">
-          <img :src="value.uiElement.image.imageUrl" alt="" class="w-[17vw] rounded">
+        <div v-for="(value, key) in item" :key="key" class="flex justify-between items-center my-2">
+          <img :src="value.coverUrl" alt="" class="w-[17vw] rounded">
           <div class="flex-1 px-2">
-            <h5 class="dark:text-[#E7E8E8]">{{ value.uiElement.mainTitle.title }}</h5>
+            <h5 class="dark:text-[#E7E8E8]">{{ value.albumName }}</h5>
             <p class="text-xs mx-2 mt-2">
               <van-tag plain type="primary" size="mini" color="#ffe1e1" text-color="#ad0000">超清母带</van-tag>
-              <span class="text-xs">{{ value.resourceExtInfo.artists[0].name }}</span>
+              <span class="text-xs">{{ value.artistName }}</span>
             </p>
           </div>
           <van-icon name="play-circle-o" color="#6C6B70" class="flex-none pr-[8vw]" />

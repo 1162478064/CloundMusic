@@ -156,8 +156,70 @@ const SidaberSetting = [{
     }]
 }]
 
+// 底部导航栏路由
+const Route = [
+    {
+        href: '/home',
+        icon: 'eye-o',
+        title: '发现',
+        name: 'homePage'
+    }, {
+        href: '/podcast',
+        icon: 'music-o',
+        title: '播客',
+        name: 'podcastPage'
+    }, {
+        href: '/my',
+        icon: 'contact',
+        title: '我的',
+        name: 'myPage'
+    }, {
+        href: '/follow',
+        icon: 'goods-collect-o',
+        title: '关注',
+        name: 'followPage'
+    }, {
+        href: '/community',
+        icon: 'friends-o',
+        title: '社区',
+        name: 'communityPage'
+    }
+];
+
+const podcastNavBar = [
+    {
+        name: 'podcast',
+        title: '播客'
+    }, {
+        name: 'soundbook',
+        title: '有声书'
+    }, {
+        name: 'brodcast',
+        title: '广播剧'
+    }, {
+        name: 'listen',
+        title: '听听'
+    }
+]
+
+const communityNavBar = [
+    {
+        name: 'square',
+        title: '广场'
+    }, {
+        name: 'video',
+        title: '视频'
+    }, {
+        name: 'songhome',
+        title: '歌房'
+    }
+]
+
 export default {
     MenuList,
     calendar,
-    SidaberSetting
+    SidaberSetting,
+    Route,
+    podcastNavBar,
+    communityNavBar
 }

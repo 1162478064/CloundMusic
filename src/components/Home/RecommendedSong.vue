@@ -57,11 +57,12 @@ export default {
     }, 3000);
   },
   methods: {
+    // 弹出分享弹框
     alertShare() {
       this.$emit('transfer',{ whether: true, title: '推荐歌单' })
     },
+    // 跳转到歌单详情页面并为vuex赋值
     JumpPage(Index) {
-      // console.log(this.recommended[Index].id);
       this.$router.push({ path: '/description/detail', query: { id: this.recommended[Index].id } })
     }
   }

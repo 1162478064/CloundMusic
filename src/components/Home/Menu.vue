@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import HomeMenuData from "@/assetes/HomeMenu";
+import HomeMenuData from "@/assets/HomeMenu";
 
 export default {
   name: "MenuList",

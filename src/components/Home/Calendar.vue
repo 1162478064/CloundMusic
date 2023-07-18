@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import data from '@/assetes/HomeMenu.js'
+import data from '@/assets/HomeMenu.js'
 export default {
   name: "Calendar",
   data() {
